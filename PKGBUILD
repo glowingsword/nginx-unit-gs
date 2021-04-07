@@ -65,5 +65,5 @@ package_nginx-unit-php-gs() {
 
   cd "${srcdir}/${_shortname}-${pkgver}"
   make DESTDIR="${pkgdir}" php-install
-  make DESTDIR="${pkgdir}" php7-install
+  make DESTDIR="${pkgdir}" php74-install
 }
