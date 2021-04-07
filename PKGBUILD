@@ -11,7 +11,7 @@ pkgname=('nginx-unitd-gs'
          'nginx-unit-python-gs'
          'nginx-unit-php-gs')
 _shortname='unit'
-pkgver=1.21.0
+pkgver=1.23.0
 pkgrel=1
 pkgdesc="Lightweight, dynamic, open-source server for diverse web applications."
 arch=('x86_64')
@@ -53,7 +53,7 @@ package_nginx-libunit-gs() {
 }
 
 package_nginx-unit-python-gs() {
-  depends=('nginx-unitd' 'python')
+  depends=('nginx-unitd-gs' 'python')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
   make DESTDIR="${pkgdir}" python3-install
@@ -61,7 +61,7 @@ package_nginx-unit-python-gs() {
 
 
 package_nginx-unit-php-gs() {
-  depends=('nginx-unitd' 'php-embed')
+  depends=('nginx-unitd-gs' 'php-embed')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
   make DESTDIR="${pkgdir}" php-install
