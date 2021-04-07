@@ -5,11 +5,11 @@
 # Contributor: Julian Brost <julian@0x4a42.net>
 # Contributor: Lorenzo Gabriele <lorenzolespaul@gmail.com>
 
-pkgbase='nginx-unit'
-pkgname=('nginx-unitd'
-         'nginx-libunit'
-         'nginx-unit-python'
-         'nginx-unit-php'
+pkgbase='nginx-unit-gs'
+pkgname=('nginx-unitd-gs'
+         'nginx-libunit-gs'
+         'nginx-unit-python-gs'
+         'nginx-unit-php-gs')
 _shortname='unit'
 pkgver=1.21.0
 pkgrel=1
@@ -39,7 +39,7 @@ build() {
   make all
 }
 
-package_nginx-unitd() {
+package_nginx-unitd-gs() {
   depends=('glibc' 'openssl')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
@@ -47,12 +47,12 @@ package_nginx-unitd() {
   install -m 644 -D "${srcdir}/unit.service" "${pkgdir}/usr/lib/systemd/system/unit.service"
 }
 
-package_nginx-libunit() {
+package_nginx-libunit-gs() {
   cd "${srcdir}/${_shortname}-${pkgver}"
   make DESTDIR="${pkgdir}" libunit-install
 }
 
-package_nginx-unit-python() {
+package_nginx-unit-python-gs() {
   depends=('nginx-unitd' 'python')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
@@ -60,7 +60,7 @@ package_nginx-unit-python() {
 }
 
 
-package_nginx-unit-php() {
+package_nginx-unit-php-gs() {
   depends=('nginx-unitd' 'php-embed')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
