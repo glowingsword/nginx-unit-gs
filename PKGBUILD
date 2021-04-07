@@ -35,7 +35,7 @@ build() {
               --tmp="/tmp" \
               --openssl
   ./configure python --config=python3-config
-  ./configure php --module=php74 /usr/bin/php-config7 --lib-path=/usr/lib/php7 --module=php /usr/bin/php-config --lib-path=/usr/lib/php
+  ./configure php --module=php74  --config=/usr/bin/php-config7 --lib-path=/usr/lib/php7 --module=php --config=/usr/bin/php-config --lib-path=/usr/lib/php
   make all
 }
 
