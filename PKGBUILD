@@ -61,7 +61,7 @@ package_nginx-unit-python-gs() {
 
 
 package_nginx-unit-php-gs() {
-  depends=('nginx-unitd-gs' 'php-embed')
+  depends=('nginx-unitd-gs' 'php-embed' 'php7-embed')
 
   cd "${srcdir}/${_shortname}-${pkgver}"
   make DESTDIR="${pkgdir}" php-install
